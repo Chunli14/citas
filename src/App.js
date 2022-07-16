@@ -9,7 +9,7 @@ function App() {
     citasIniciales = [];
   }
 
-  const [citas, guardarCitas] = useState([]);
+  const [citas, guardarCitas] = useState(citasIniciales);
   
   useEffect(() => {
     if (citasIniciales){
@@ -18,7 +18,7 @@ function App() {
       localStorage.setItem('citas', JSON.stringify([]));
     }
   }, [citas,citasIniciales]); 
-  
+
   const crearCita = cita => {
 
     guardarCitas([...citas, cita])
